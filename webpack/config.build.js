@@ -1,10 +1,10 @@
-var Extract = require('extract-text-webpack-plugin')
-var merge   = require('webpack-merge')
-var Webpack = require('webpack')
+var Extract = require('extract-text-webpack-plugin');
+var merge   = require('webpack-merge');
+var Webpack = require('webpack');
 
-var config = require('./config')
+var config = require('./config');
 
-var publicPath = process.env.npm_package_config_public_path
+var publicPath = process.env.npm_package_config_public_path;
 
 
 
@@ -57,4 +57,4 @@ module.exports = merge(config, {
       },
     }),
   ],
-})
+});

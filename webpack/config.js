@@ -1,7 +1,7 @@
-var path = require('path')
+var path = require('path');
 
-var autoprefixer = require('autoprefixer')
-var Html         = require('html-webpack-plugin')
+var autoprefixer = require('autoprefixer');
+var Html         = require('html-webpack-plugin');
 
 
 
@@ -39,7 +39,7 @@ module.exports = {
   postcss: function postcss() {
     return [
       autoprefixer,
-    ]
+    ];
   },
   resolve: {
     alias: {
@@ -52,4 +52,4 @@ module.exports = {
       '.jsx',
     ],
   },
-}
+};

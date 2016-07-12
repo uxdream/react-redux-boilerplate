@@ -1,11 +1,11 @@
-var Sync    = require('browser-sync-webpack-plugin')
-var merge   = require('webpack-merge')
-var Webpack = require('webpack')
+var Sync    = require('browser-sync-webpack-plugin');
+var merge   = require('webpack-merge');
+var Webpack = require('webpack');
 
-var config = require('./config')
+var config = require('./config');
 
-var port       = process.env.npm_package_config_port
-var publicPath = process.env.npm_package_config_public_path
+var port       = process.env.npm_package_config_port;
+var publicPath = process.env.npm_package_config_public_path;
 
 
 
@@ -72,4 +72,4 @@ module.exports = merge(config, {
     }),
     new Webpack.HotModuleReplacementPlugin(),
   ],
-})
+});
