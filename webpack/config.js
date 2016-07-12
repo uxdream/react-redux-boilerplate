@@ -10,7 +10,7 @@ module.exports = {
   entry: [
     'babel-polyfill',
     './scripts/index.js',
-    './styles/index.sass',
+    './styles/index.scss',
   ],
   module: {
     loaders: [
