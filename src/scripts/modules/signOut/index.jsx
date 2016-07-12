@@ -1,11 +1,44 @@
-import React, { Component, } from 'react';
+import React, { Component, PropTypes, } from 'react';
+import { connect, } from 'react-redux';
+
+import { signOutRequest, } from './actions';
 
 
 
-export default class SignOut extends Component {
+class SignOut extends Component {
+  static propTypes = {
+    signOut: PropTypes.func.isRequired,
+  }
+
+
+
+  componentDidMount() {
+    const {
+      signOut,
+    } = this.props;
+
+    signOut();
+  }
+
+
+
   render() {
     return (
-      <section>SignOut</section>
+      <div />
     );
   }
 }
+
+
+
+function mapStateToProps() {
+  return {};
+}
+
+const mapDispatchToProps = {
+  signOut: signOutRequest,
+};
+
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(SignOut);

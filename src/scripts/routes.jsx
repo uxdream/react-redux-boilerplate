@@ -1,9 +1,9 @@
 import React from 'react';
 import { Route, } from 'react-router';
 
-import Dashboard from 'modules/dashboard';
-import SignIn    from 'modules/signIn';
-import SignOut   from 'modules/signOut';
+import SignIn  from 'modules/signIn';
+import SignOut from 'modules/signOut';
+import Stub    from 'modules/stub';
 
 import paths from 'consts/paths';
 
@@ -22,7 +22,7 @@ export default (
     />
 
     <Route
-      component={ Dashboard }
+      component={ Stub }
       path={ paths.dashboard }
     />
   </Route>

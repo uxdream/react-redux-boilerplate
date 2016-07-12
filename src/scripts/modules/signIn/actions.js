@@ -6,8 +6,10 @@ export const consts = {
 
 
 
-export function signInRequest() {
+export function signInRequest(email, password) {
   return {
+    email,
+    password,
     type: consts.signInRequest,
   };
 }
