@@ -1,6 +1,9 @@
 import React, { Component, PropTypes, } from 'react';
 import { connect, } from 'react-redux';
 
+import Button from 'components/button';
+import Input  from 'components/input';
+
 import { signInRequest, } from './actions';
 
 
@@ -15,7 +18,9 @@ class SignIn extends Component {
   constructor(props) {
     super(props);
 
-    this._signIn = ::this._signIn;
+    this._signIn           = ::this._signIn;
+    this._onEmailChange    = ::this._onEmailChange;
+    this._onPasswordChange = ::this._onPasswordChange;
 
     this.state = {
       email: '',
@@ -25,7 +30,9 @@ class SignIn extends Component {
 
 
 
-  _signIn() {
+  _signIn(event) {
+    event.preventDefault();
+
     const {
       signIn,
     } = this.props;
@@ -40,10 +47,41 @@ class SignIn extends Component {
 
 
 
+  _onEmailChange(value) {
+    this.setState({
+      email: value,
+    });
+  }
+
+  _onPasswordChange(value) {
+    this.setState({
+      password: value,
+    });
+  }
+
+
+
   render() {
+    const {
+      email,
+      password,
+    } = this.state;
+
     return (
       <section>
-
+        <form onSubmit={ this._signIn }>
+          <Input
+            onChange={ this._onEmailChange }
+            type="text"
+            value={ email }
+          />
+          <Input
+            onChange={ this._onPasswordChange }
+            type="password"
+            value={ password }
+          />
+          <Button type="submit">Sign in</Button>
+        </form>
       </section>
     );
   }
