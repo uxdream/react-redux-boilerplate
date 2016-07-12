@@ -1,4 +1,5 @@
 import mergeable from 'redux-merge-reducers';
+import { assign, } from 'lodash/fp';
 
 import { consts, } from './actions';
 
@@ -7,7 +8,13 @@ import { consts, } from './actions';
 function signOutReducer(state = {}, action) {
   switch(action.type) {
     case consts.signOutSuccess:
-      return state;
+      return assign(
+      {},
+        {
+          token: undefined,
+        },
+      state
+    );
 
     case consts.signOutFailed:
       return state;

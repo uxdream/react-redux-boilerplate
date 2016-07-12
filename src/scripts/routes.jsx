@@ -1,9 +1,9 @@
 import React from 'react';
-import { Route, } from 'react-router';
+import { IndexRedirect, Route, } from 'react-router';
 
-import SignIn  from 'modules/signIn';
-import SignOut from 'modules/signOut';
-import Stub    from 'modules/stub';
+import Dashboard from 'modules/dashboard';
+import SignIn    from 'modules/signIn';
+import SignOut   from 'modules/signOut';
 
 import paths from 'consts/paths';
 
@@ -11,6 +11,10 @@ import paths from 'consts/paths';
 
 export default (
   <Route path="/">
+    <IndexRedirect
+      to={ paths.signIn }
+    />
+
     <Route
       component={ SignIn }
       path={ paths.signIn }
@@ -22,7 +26,7 @@ export default (
     />
 
     <Route
-      component={ Stub }
+      component={ Dashboard }
       path={ paths.dashboard }
     />
   </Route>

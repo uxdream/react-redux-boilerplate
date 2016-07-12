@@ -8,6 +8,7 @@ import { consts, } from './actions';
 function* signIn() {
   try {
     yield put({
+      token: '0000-1111-0000',
       type: consts.signInSuccess,
     });
   }

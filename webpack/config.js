@@ -48,6 +48,7 @@ module.exports = {
       components: path.resolve('./src/scripts/components'),
       consts:     path.resolve('./src/scripts/consts'),
       modules:    path.resolve('./src/scripts/modules'),
+      providers:  path.resolve('./src/scripts/providers'),
     },
     extensions: [
       '',
