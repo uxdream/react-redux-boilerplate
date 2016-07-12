@@ -46,6 +46,10 @@
   },
   "dependencies": {
     "react": "^15.2.0",
-    "react-dom": "^15.2.0"
+    "react-dom": "^15.2.0",
+    "react-redux": "^4.4.0",
+    "react-router": "^2.5.0",
+    "redux": "^3.5.0",
+    "redux-saga": "^0.11.0"
   }
 }
