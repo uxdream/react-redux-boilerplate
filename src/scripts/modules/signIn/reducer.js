@@ -2,7 +2,7 @@ import { consts, } from './actions';
 
 
 
-export default function(state = {}, action) {
+export default function(state = { signIn: true, }, action) {
   switch(action.type) {
     case consts.signInSuccess:
       return state;

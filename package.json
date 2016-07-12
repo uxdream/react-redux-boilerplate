@@ -45,6 +45,7 @@
     "webpack-merge": "^0.14.0"
   },
   "dependencies": {
+    "lodash": "^4.13.0",
     "react": "^15.2.0",
     "react-dom": "^15.2.0",
     "react-redux": "^4.4.0",

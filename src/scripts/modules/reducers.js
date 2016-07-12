@@ -6,6 +6,8 @@ import signOut from './signOut/reducer';
 
 
 export default combineReducers({
-  signIn,
-  signOut,
+  auth: combineReducers(
+    signIn,
+    signOut
+  ),
 });

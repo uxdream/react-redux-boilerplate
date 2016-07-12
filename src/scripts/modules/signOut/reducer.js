@@ -2,7 +2,7 @@ import { consts, } from './actions';
 
 
 
-export default function(state = {}, action) {
+export default function(state = { signOut: true, }, action) {
   switch(action.type) {
     case consts.signOutSuccess:
       return state;
