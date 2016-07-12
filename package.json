@@ -51,6 +51,7 @@
     "react-redux": "^4.4.0",
     "react-router": "^2.5.0",
     "redux": "^3.5.0",
+    "redux-merge-reducers": "0.0.2",
     "redux-saga": "^0.11.0"
   }
 }

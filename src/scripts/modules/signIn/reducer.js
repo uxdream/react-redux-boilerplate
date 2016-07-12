@@ -1,8 +1,10 @@
+import mergeable from 'redux-merge-reducers';
+
 import { consts, } from './actions';
 
 
 
-export default function(state = { signIn: true, }, action) {
+function signInReducer(state = {}, action) {
   switch(action.type) {
     case consts.signInSuccess:
       return state;
@@ -14,3 +16,7 @@ export default function(state = { signIn: true, }, action) {
       return state;
   }
 }
+
+
+
+export default mergeable(signInReducer);
