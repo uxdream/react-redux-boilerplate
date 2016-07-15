@@ -4,8 +4,6 @@ export const consts = {
   changeLanguageFailed:  'CHANGE_LANGUAGE_FAILED',
 };
 
-
-
 export function changeLanguageRequest(language) {
   return {
     language,

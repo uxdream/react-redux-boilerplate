@@ -3,8 +3,6 @@ import { put, } from 'redux-saga/effects';
 
 import { consts, } from './actions';
 
-
-
 function* signOut() {
   try {
     localStorage.removeItem('token');
@@ -22,8 +20,6 @@ function* signOut() {
     });
   }
 }
-
-
 
 export function* signOutRequest() {
   while(true) { // eslint-disable-line no-constant-condition

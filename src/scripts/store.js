@@ -4,11 +4,7 @@ import { applyMiddleware, compose, createStore, } from 'redux';
 import reducers from 'modules/reducers';
 import sagas    from 'modules/sagas';
 
-
-
 const sagaMiddleware = createSaga();
-
-
 
 function configureStore() {
   const middlewares = [
@@ -25,12 +21,8 @@ function configureStore() {
   );
 }
 
-
-
 const store = configureStore();
 
 sagaMiddleware.run(sagas);
-
-
 
 export default store;

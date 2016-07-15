@@ -4,8 +4,6 @@ export const consts = {
   signOutFailed:  'SIGN_OUT_FAILED',
 };
 
-
-
 export function signOutRequest() {
   return {
     type: consts.signOutRequest,

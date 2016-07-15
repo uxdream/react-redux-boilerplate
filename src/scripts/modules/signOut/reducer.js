@@ -4,7 +4,6 @@ import { assign, } from 'lodash/fp';
 import { consts, } from './actions';
 
 
-
 function signOutReducer(state = {}, action) {
   switch(action.type) {
     case consts.signOutSuccess:
@@ -22,7 +21,5 @@ function signOutReducer(state = {}, action) {
       return state;
   }
 }
-
-
 
 export default mergeable(signOutReducer);

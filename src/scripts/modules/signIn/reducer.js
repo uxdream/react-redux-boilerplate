@@ -3,8 +3,6 @@ import { assign, } from 'lodash/fp';
 
 import { consts, } from './actions';
 
-
-
 function signInReducer(state = {
   token: localStorage.getItem('token'),
 }, action) {
@@ -24,7 +22,5 @@ function signInReducer(state = {
       return state;
   }
 }
-
-
 
 export default mergeable(signInReducer);

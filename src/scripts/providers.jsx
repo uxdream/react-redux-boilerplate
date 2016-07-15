@@ -12,8 +12,6 @@ import history from './history';
 import routes  from './routes';
 import store   from './store';
 
-
-
 function connectReactIntlToStore(state) {
   const {
     activeLanguage,
@@ -29,11 +27,7 @@ function connectReactIntlToStore(state) {
 
 const ReactIntl = connect(connectReactIntlToStore)(IntlProvider);
 
-
-
 store.dispatch(changeLanguageRequest('en'));
-
-
 
 export default (
   <Store store={ store }>

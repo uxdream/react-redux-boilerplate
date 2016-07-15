@@ -1,21 +1,15 @@
 import React, { Component, PropTypes, } from 'react';
 
-
-
 export default class Input extends Component {
   static propTypes = {
     onChange: PropTypes.func,
   }
-
-
 
   constructor(props) {
     super(props);
 
     this._onChange = ::this._onChange;
   }
-
-
 
   _onChange(event) {
     const value = event.target.value;
@@ -28,8 +22,6 @@ export default class Input extends Component {
       onChange(value);
     }
   }
-
-
 
   render() {
     const {

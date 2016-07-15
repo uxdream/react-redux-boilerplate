@@ -5,14 +5,11 @@ import paths from 'consts/paths';
 
 import history from '../history';
 
-
-
 class AuthProvider extends Component {
   static propTypes = {
     children: PropTypes.node,
     token: PropTypes.string,
   }
-
 
   componentWillReceiveProps(nextProps) {
     const {
@@ -28,8 +25,6 @@ class AuthProvider extends Component {
     }
   }
 
-
-
   render() {
     const {
       children,
@@ -39,14 +34,10 @@ class AuthProvider extends Component {
   }
 }
 
-
-
 function mapStateToProps(state) {
   return {
     token: state.auth.token,
   };
 }
-
-
 
 export default connect(mapStateToProps)(AuthProvider);

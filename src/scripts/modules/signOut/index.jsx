@@ -3,14 +3,10 @@ import { connect, } from 'react-redux';
 
 import { signOutRequest, } from './actions';
 
-
-
 class SignOut extends Component {
   static propTypes = {
     signOut: PropTypes.func.isRequired,
   }
-
-
 
   componentDidMount() {
     const {
@@ -20,16 +16,12 @@ class SignOut extends Component {
     signOut();
   }
 
-
-
   render() {
     return (
       <div />
     );
   }
 }
-
-
 
 function mapStateToProps() {
   return {};
@@ -38,7 +30,5 @@ function mapStateToProps() {
 const mapDispatchToProps = {
   signOut: signOutRequest,
 };
-
-
 
 export default connect(mapStateToProps, mapDispatchToProps)(SignOut);

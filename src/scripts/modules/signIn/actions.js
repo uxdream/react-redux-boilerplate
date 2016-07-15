@@ -4,8 +4,6 @@ export const consts = {
   signInFailed:  'SIGN_IN_FAILED',
 };
 
-
-
 export function signInRequest(email, password) {
   return {
     email,

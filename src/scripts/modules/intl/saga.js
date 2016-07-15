@@ -11,8 +11,6 @@ import store from '../../store';
 
 import { consts, } from './actions';
 
-
-
 const localesData = {
   de,
   en,
@@ -33,8 +31,6 @@ const messagesData = {
     SIGN_OUT: 'Wyloguj się',
   },
 };
-
-
 
 function* changeLanguage(action) {
   const {
@@ -76,8 +72,6 @@ function* changeLanguage(action) {
     });
   }
 }
-
-
 
 export function* changeLanguageRequest() {
   while(true) { // eslint-disable-line no-constant-condition

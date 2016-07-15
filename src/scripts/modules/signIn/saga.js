@@ -3,8 +3,6 @@ import { put, } from 'redux-saga/effects';
 
 import { consts, } from './actions';
 
-
-
 function* signIn() {
   try {
     const token = '1111-0000-1111';
@@ -25,8 +23,6 @@ function* signIn() {
     });
   }
 }
-
-
 
 export function* signInRequest() {
   while(true) { // eslint-disable-line no-constant-condition

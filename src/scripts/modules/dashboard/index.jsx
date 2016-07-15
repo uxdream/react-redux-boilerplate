@@ -6,8 +6,6 @@ import { changeLanguageRequest, } from 'modules/intl/actions';
 
 import paths from 'consts/paths';
 
-
-
 class Dashboard extends Component {
   static contextTypes = {
     intl: PropTypes.object.isRequired,
@@ -16,8 +14,6 @@ class Dashboard extends Component {
   static propTypes = {
     changeLanguage: PropTypes.func.isRequired,
   }
-
-
 
   render() {
     const {
@@ -41,8 +37,6 @@ class Dashboard extends Component {
   }
 }
 
-
-
 function mapStateToProps(state) {
   return {
     language: state.intl.activeLanguage,
@@ -52,7 +46,5 @@ function mapStateToProps(state) {
 const mapDispatchToProps = {
   changeLanguage: changeLanguageRequest,
 };
-
-
 
 export default connect(mapStateToProps, mapDispatchToProps)(Dashboard);

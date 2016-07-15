@@ -7,8 +7,6 @@ import SignOut   from 'modules/signOut';
 
 import paths from 'consts/paths';
 
-
-
 export default (
   <Route path="/">
     <IndexRedirect

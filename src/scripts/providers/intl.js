@@ -1,7 +1,5 @@
 import { Component, PropTypes, } from 'react';
 
-
-
 export default class IntlProvider extends Component {
   static childContextTypes = {
     intl: PropTypes.object.isRequired,
@@ -14,8 +12,6 @@ export default class IntlProvider extends Component {
   static propTypes = {
     children: PropTypes.node,
   }
-
-
 
   getChildContext() {
     const {
@@ -38,8 +34,6 @@ export default class IntlProvider extends Component {
       },
     };
   }
-
-
 
   render() {
     const {

@@ -6,8 +6,6 @@ import Input  from 'components/input';
 
 import { signInRequest, } from './actions';
 
-
-
 class SignIn extends Component {
   static contextTypes = {
     intl: PropTypes.object.isRequired,
@@ -16,8 +14,6 @@ class SignIn extends Component {
   static propTypes = {
     signIn: PropTypes.func.isRequired,
   }
-
-
 
   constructor(props) {
     super(props);
@@ -31,8 +27,6 @@ class SignIn extends Component {
       password: '',
     };
   }
-
-
 
   _signIn(event) {
     event.preventDefault();
@@ -49,8 +43,6 @@ class SignIn extends Component {
     signIn(email, password);
   }
 
-
-
   _onEmailChange(value) {
     this.setState({
       email: value,
@@ -62,8 +54,6 @@ class SignIn extends Component {
       password: value,
     });
   }
-
-
 
   render() {
     const {
@@ -95,8 +85,6 @@ class SignIn extends Component {
   }
 }
 
-
-
 function mapStateToProps() {
   return {};
 }
@@ -104,7 +92,5 @@ function mapStateToProps() {
 const mapDispatchToProps = {
   signIn: signInRequest,
 };
-
-
 
 export default connect(mapStateToProps, mapDispatchToProps)(SignIn);
