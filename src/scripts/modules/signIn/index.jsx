@@ -9,6 +9,10 @@ import { signInRequest, } from './actions';
 
 
 class SignIn extends Component {
+  static contextTypes = {
+    intl: PropTypes.object.isRequired,
+  }
+
   static propTypes = {
     signIn: PropTypes.func.isRequired,
   }
@@ -63,6 +67,10 @@ class SignIn extends Component {
 
   render() {
     const {
+      intl,
+    } = this.context;
+
+    const {
       email,
       password,
     } = this.state;
@@ -80,7 +88,7 @@ class SignIn extends Component {
             type="password"
             value={ password }
           />
-          <Button type="submit">Sign in</Button>
+          <Button type="submit">{ intl.message('SIGN_IN') }</Button>
         </form>
       </section>
     );

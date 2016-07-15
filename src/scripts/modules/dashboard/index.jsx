@@ -9,6 +9,10 @@ import paths from 'consts/paths';
 
 
 class Dashboard extends Component {
+  static contextTypes = {
+    intl: PropTypes.object.isRequired,
+  }
+
   static propTypes = {
     changeLanguage: PropTypes.func.isRequired,
   }
@@ -17,12 +21,16 @@ class Dashboard extends Component {
 
   render() {
     const {
+      intl,
+    } = this.context;
+
+    const {
       changeLanguage,
     } = this.props;
 
     return (
       <section>
-        <Link to={ paths.signOut }>Sign out</Link>
+        <Link to={ paths.signOut }>{ intl.message('SIGN_OUT') }</Link>
         <ul>
           <li onClick={ changeLanguage.bind(null, 'de') }>DE</li>
           <li onClick={ changeLanguage.bind(null, 'en') }>EN</li>
