@@ -38,6 +38,8 @@ function* changeLanguage(action) {
   } = action;
 
   try {
+    localStorage.setItem('language', language);
+
     document.querySelector('html').setAttribute('lang', language);
 
     const languageIsLoaded = find(language, Object.keys(store.getState().intl.locales));

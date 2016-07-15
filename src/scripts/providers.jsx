@@ -27,7 +27,7 @@ function connectReactIntlToStore(state) {
 
 const ReactIntl = connect(connectReactIntlToStore)(IntlProvider);
 
-store.dispatch(changeLanguageRequest('en'));
+store.dispatch(changeLanguageRequest(localStorage.getItem('language') || 'en'));
 
 export default (
   <Store store={ store }>
