@@ -7,13 +7,19 @@ import { consts, } from './actions';
 
 function* signIn() {
   try {
+    const token = '1111-0000-1111';
+
+    localStorage.setItem('token', token);
+
     yield put({
-      token: '0000-1111-0000',
+      token,
       type: consts.signInSuccess,
     });
   }
 
   catch(error) {
+    console.error(error);
+
     yield put({
       type: consts.signInFailed,
     });

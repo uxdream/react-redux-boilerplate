@@ -5,15 +5,16 @@ import { consts, } from './actions';
 
 
 
-function signInReducer(state = {}, action) {
+function signInReducer(state = {
+  token: localStorage.getItem('token'),
+}, action) {
   switch(action.type) {
     case consts.signInSuccess:
       return assign(
-        {},
+        state,
         {
           token: action.token,
-        },
-        state
+        }
       );
 
     case consts.signInFailed:

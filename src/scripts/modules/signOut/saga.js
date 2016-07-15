@@ -7,12 +7,16 @@ import { consts, } from './actions';
 
 function* signOut() {
   try {
+    localStorage.removeItem('token');
+
     yield put({
       type: consts.signOutSuccess,
     });
   }
 
   catch(error) {
+    console.error(error);
+
     yield put({
       type: consts.signOutFailed,
     });

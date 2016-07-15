@@ -9,11 +9,10 @@ function signOutReducer(state = {}, action) {
   switch(action.type) {
     case consts.signOutSuccess:
       return assign(
-        {},
+        state,
         {
           token: undefined,
-        },
-        state
+        }
       );
 
     case consts.signOutFailed:
