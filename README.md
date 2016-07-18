@@ -38,4 +38,4 @@ npm run lint
 
 [badge-travis]: https://img.shields.io/travis/ux-dream/react-redux-boilerplate.svg
 [badge-dependencies]: https://img.shields.io/david/ux-dream/react-redux-boilerplate.svg
-[badge-dev-dependencies]: https://img.shields.io/david/ux-dream/react-redux-boilerplate.svg
+[badge-dev-dependencies]: https://img.shields.io/david/dev/ux-dream/react-redux-boilerplate.svg
