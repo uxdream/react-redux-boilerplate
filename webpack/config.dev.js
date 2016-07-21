@@ -38,7 +38,7 @@ module.exports = merge(config, {
         },
       },
       {
-        test: /\.sass$/,
+        test: /\.scss$/,
         loaders: [
           'style',
           'css?sourceMap',

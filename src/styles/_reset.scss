@@ -1,0 +1,62 @@
+* {
+  &,
+  &:before,
+  &:after {
+    margin: 0;
+    padding: 0;
+    background: scroll transparent none 0 0 repeat;
+    border: 0 none #000;
+    outline: 0 none #000;
+    border-radius: 0;
+    box-shadow: none;
+    box-sizing: border-box;
+    color: inherit;
+    font-family: inherit;
+    font-size: inherit;
+    font-style: inherit;
+    font-variant: inherit;
+    font-weight: inherit;
+    text-align: inherit;
+    text-decoration: inherit;
+    text-transform: inherit;
+    line-height: inherit;
+    vertical-align: top;
+    cursor: inherit;
+  }
+}
+
+body {
+  background-color: #fff;
+  color: #000;
+  font-size: 16px;
+  font-family: sans-serif;
+  text-align: left;
+  line-height: 1.5;
+  cursor: default;
+}
+
+input,
+textarea {
+  user-select: text;
+  cursor: text;
+}
+
+a,
+button,
+[type="button"],
+[type="checkbox"],
+[type="radio"],
+[for] {
+  user-select: none;
+  cursor: pointer;
+}
+
+input,
+select,
+textarea,
+button {
+  &[disabled] {
+    user-select: none;
+    cursor: not-allowed;
+  }
+}

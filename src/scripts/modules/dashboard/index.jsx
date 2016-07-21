@@ -9,6 +9,8 @@ import paths from 'consts/paths';
 class Dashboard extends Component {
   static contextTypes = {
     intl: PropTypes.object.isRequired,
+    modal: PropTypes.object.isRequired,
+    notification: PropTypes.object.isRequired,
   }
 
   static propTypes = {
@@ -18,6 +20,8 @@ class Dashboard extends Component {
   render() {
     const {
       intl,
+      modal,
+      notification,
     } = this.context;
 
     const {
@@ -32,15 +36,22 @@ class Dashboard extends Component {
           <li onClick={ changeLanguage.bind(null, 'en') }>EN</li>
           <li onClick={ changeLanguage.bind(null, 'pl') }>PL</li>
         </ul>
+        <ul>
+          <li onClick={ modal.open.bind(null, {
+            closeable: true,
+            message: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus nec ornare sem. Aenean viverra neque risus, ut pellentesque lacus auctor vel. Sed ultricies lectus sed dignissim rhoncus. Integer congue velit felis, finibus fermentum libero maximus eget. Curabitur scelerisque quam libero, a aliquet est convallis non. In tristique nisi at dolor suscipit mattis. Nam semper est ut odio tristique convallis. Proin viverra nulla sem, ut vulputate erat dictum ut. Phasellus dapibus pellentesque consequat. Curabitur sapien sem, porttitor sit amet eleifend id, convallis in tortor. Proin commodo ipsum massa, nec cursus arcu consequat id. Aliquam accumsan tellus vel justo ornare, eu vehicula libero hendrerit.',
+          }) }>MODAL</li>
+          <li onClick={ notification.open.bind(null, {
+            message: 'Your mom died',
+          }) }>NOTIFICATION</li>
+        </ul>
       </section>
     );
   }
 }
 
-function mapStateToProps(state) {
-  return {
-    language: state.intl.activeLanguage,
-  };
+function mapStateToProps() {
+  return {};
 }
 
 const mapDispatchToProps = {

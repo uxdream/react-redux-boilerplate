@@ -1,0 +1,47 @@
+.modal {
+  $max-width: 800px;
+  $padding: 20px;
+
+  $box-background-color: #fff;
+  $font-color: #222;
+  $overlay-backgroud-color: rgba(#000, 0.75);
+
+  background: $overlay-backgroud-color;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  color: $font-color;
+
+  .modal__box {
+    padding: $padding;
+    width: 100%;
+    max-width: $max-width;
+    max-height: 100%;
+    background: $box-background-color;
+    border-radius: 3px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    overflow-y: auto;
+
+    transform: translate(-50%, -50%);
+  }
+
+  .modal__close {
+    $size: $padding * 0.75;
+
+    position: absolute;
+    top: $padding / 2;
+    right: $padding / 2;
+
+    svg {
+      width: $size;
+      height: $size;
+      fill: $font-color;
+      display: block;
+    }
+  }
+}

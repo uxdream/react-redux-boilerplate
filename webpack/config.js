@@ -49,6 +49,7 @@ module.exports = {
       consts:     path.resolve('./src/scripts/consts'),
       modules:    path.resolve('./src/scripts/modules'),
       providers:  path.resolve('./src/scripts/providers'),
+      utils:      path.resolve('./src/scripts/utils'),
     },
     extensions: [
       '',

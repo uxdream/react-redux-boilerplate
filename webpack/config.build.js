@@ -24,7 +24,7 @@ module.exports = merge(config, {
         },
       },
       {
-        test: /\.sass$/,
+        test: /\.scss$/,
         loader: Extract.extract([
           'css',
           'postcss',

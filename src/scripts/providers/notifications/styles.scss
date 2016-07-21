@@ -1,0 +1,44 @@
+.notifications {
+  $padding: 10px;
+
+  padding: $padding $padding 0 0;
+  position: fixed;
+  top: 0;
+  right: 0;
+
+  .notification + .notification {
+    margin-top: $padding;
+  }
+}
+
+.notification {
+  $padding: 20px;
+  $width: 250px;
+
+  $background-color: #fff;
+  $font-color: #222;
+
+  padding: $padding;
+  width: $width;
+  background: $background-color;
+  border-radius: 3px;
+  position: relative;
+
+  color: $font-color;
+  font-size: 0.8rem;
+
+  .notification__close {
+    $size: $padding * 0.75;
+
+    position: absolute;
+    top: $padding / 2;
+    right: $padding / 2;
+
+    svg {
+      width: $size;
+      height: $size;
+      fill: $font-color;
+      display: block;
+    }
+  }
+}

@@ -5,8 +5,10 @@ import { Router, } from 'react-router';
 
 import { changeLanguageRequest, } from 'modules/intl/actions';
 
-import Auth from 'providers/auth';
-import Intl from 'providers/intl';
+import Auth          from 'providers/auth';
+import Intl          from 'providers/intl';
+import Modal         from 'providers/modal';
+import Notifications from 'providers/notifications';
 
 import history from './history';
 import routes  from './routes';
@@ -19,8 +21,8 @@ function connectReactIntlToStore(state) {
   } = state.intl;
 
   return {
-    key:      activeLanguage || 'en',
-    locale:   activeLanguage || 'en',
+    key: activeLanguage || 'en',
+    locale: activeLanguage || 'en',
     messages: messages[activeLanguage] || {},
   };
 }
@@ -34,10 +36,14 @@ export default (
     <ReactIntl>
       <Intl>
         <Auth>
-          <Router
-            history={ history }
-            routes={ routes }
-          />
+          <Modal>
+            <Notifications>
+              <Router
+                history={ history }
+                routes={ routes }
+              />
+            </Notifications>
+          </Modal>
         </Auth>
       </Intl>
     </ReactIntl>
