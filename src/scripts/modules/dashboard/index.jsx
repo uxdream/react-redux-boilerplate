@@ -42,6 +42,7 @@ class Dashboard extends Component {
             message: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus nec ornare sem. Aenean viverra neque risus, ut pellentesque lacus auctor vel. Sed ultricies lectus sed dignissim rhoncus. Integer congue velit felis, finibus fermentum libero maximus eget. Curabitur scelerisque quam libero, a aliquet est convallis non. In tristique nisi at dolor suscipit mattis. Nam semper est ut odio tristique convallis. Proin viverra nulla sem, ut vulputate erat dictum ut. Phasellus dapibus pellentesque consequat. Curabitur sapien sem, porttitor sit amet eleifend id, convallis in tortor. Proin commodo ipsum massa, nec cursus arcu consequat id. Aliquam accumsan tellus vel justo ornare, eu vehicula libero hendrerit.',
           }) }>MODAL</li>
           <li onClick={ notification.open.bind(null, {
+            closeAfter: 0,
             message: 'Your mom died',
           }) }>NOTIFICATION</li>
         </ul>

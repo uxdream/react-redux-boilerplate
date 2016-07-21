@@ -15,7 +15,7 @@
 
   color: $font-color;
 
-  .modal__box {
+  &__box {
     padding: $padding;
     width: 100%;
     max-width: $max-width;
@@ -30,7 +30,7 @@
     transform: translate(-50%, -50%);
   }
 
-  .modal__close {
+  &__close {
     $size: $padding * 0.75;
 
     position: absolute;

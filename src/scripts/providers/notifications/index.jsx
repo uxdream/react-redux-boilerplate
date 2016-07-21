@@ -3,6 +3,7 @@ import './styles.scss';
 
 
 import React, { Component, PropTypes, } from 'react';
+import Animation from 'react-addons-css-transition-group';
 import { remove, } from 'lodash/fp';
 
 import randomId from 'utils/randomId';
@@ -75,10 +76,12 @@ export default class NotificationProvider extends Component {
       ],
     });
 
-    setTimeout(
-      this._close.bind(null, id),
-      (newNotification.closeAfter || 5) * 1000
-    );
+    if(newNotification.closeAfter !== 0) {
+      setTimeout(
+        this._close.bind(null, id),
+        (newNotification.closeAfter || 5) * 1000
+      );
+    }
 
     return id;
   }
@@ -94,25 +97,19 @@ export default class NotificationProvider extends Component {
       return null;
     }
 
-    return (
-      <div className="notifications">
-        {
-          notifications.map((notification) => {
-            const {
-              id,
-              message,
-            } = notification;
+    return notifications.map((notification) => {
+      const {
+        id,
+        message,
+      } = notification;
 
-            return (
-              <Notification
-                close={ this._close.bind(null, id) }
-                key={ id }
-              >{ message }</Notification>
-            );
-          })
-        }
-      </div>
-    );
+      return (
+        <Notification
+          close={ this._close.bind(null, id) }
+          key={ id }
+        >{ message }</Notification>
+      );
+    });
   }
 
   render() {
@@ -124,7 +121,18 @@ export default class NotificationProvider extends Component {
     return (
       <div { ...props }>
         { children }
-        { this.renderNotification() }
+        <Animation
+          className="notification__group"
+          component="div"
+          transitionEnterTimeout={ 600 }
+          transitionLeaveTimeout={ 600 }
+          transitionName={ {
+            enter:       'animation-in',
+            enterActive: 'animation-in--active',
+            leave:       'animation-out',
+            leaveActive: 'animation-out--active',
+          } }
+        >{ this.renderNotification() }</Animation>
       </div>
     );
   }

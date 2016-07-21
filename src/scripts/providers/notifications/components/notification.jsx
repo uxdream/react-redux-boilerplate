@@ -39,8 +39,10 @@ export default class Notification extends Component {
         { ...props }
         className="notification"
       >
-        { this.renderClose(close) }
-        { children }
+        <div className="notification__box">
+          { this.renderClose(close) }
+          { children }
+        </div>
       </div>
     );
   }
