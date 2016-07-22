@@ -26,8 +26,9 @@ export default class NotificationProvider extends Component {
   constructor(props) {
     super(props);
 
-    this._close = ::this._close;
-    this._open  = ::this._open;
+    this._close  = ::this._close;
+    this._native = ::this._native;
+    this._open   = ::this._open;
 
     this.state = {
       notifications: [],
@@ -59,10 +60,30 @@ export default class NotificationProvider extends Component {
     });
   }
 
-  _open(newNotification) {
+  _native(notification) {
+    if(window.Notification.permission === 'default') {
+      window
+        .Notification
+        .requestPermission((permission) => {
+          return this._open(notification, undefined, permission === 'default');
+        });
+
+      return;
+    }
+
+    new window.Notification(notification.message); // eslint-disable-line no-new
+  }
+
+  _open(notification, event, skipNative) {
     const {
       notifications,
     } = this.state;
+
+    if(window.Notification.permission !== 'denied' && !skipNative) {
+      this._native(notification);
+
+      return;
+    }
 
     const id = randomId();
 
@@ -70,20 +91,18 @@ export default class NotificationProvider extends Component {
       notifications: [
         ...notifications,
         {
-          ...newNotification,
+          ...notification,
           id,
         },
       ],
     });
 
-    if(newNotification.closeAfter !== 0) {
+    if(notification.closeAfter !== 0) {
       setTimeout(
         this._close.bind(null, id),
-        (newNotification.closeAfter || 5) * 1000
+        (notification.closeAfter || 5) * 1000
       );
     }
-
-    return id;
   }
 
 
