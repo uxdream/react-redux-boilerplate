@@ -15,7 +15,7 @@
 
   color: $font-color;
 
-  &__box {
+  .modal__box {
     padding: $padding;
     width: 100%;
     max-width: $max-width;
@@ -30,7 +30,7 @@
     transform: translate(-50%, -50%);
   }
 
-  &__close {
+  .modal__close {
     $size: $padding * 0.75;
 
     position: absolute;
@@ -42,6 +42,53 @@
       height: $size;
       fill: $font-color;
       display: block;
+    }
+  }
+}
+
+
+
+.modal {
+  $animation-in-timing-function: ease-out;
+  $animation-out-timing-function: ease-in;
+  $animation-in-duration: 0.4s;
+  $animation-out-duration: 0.2s;
+
+  &.animation-in {
+    opacity: 0;
+
+    transition: opacity $animation-in-timing-function $animation-in-duration;
+
+    &.animation-in--active {
+      opacity: 1;
+
+      .modal__box {
+        transform: translate(-50%, -50%) scale(1);
+      }
+    }
+
+    .modal__box {
+      transform: translate(-50%, -50%) scale(0.95);
+      transition: transform $animation-in-timing-function $animation-in-duration;
+    }
+  }
+
+  &.animation-out {
+    opacity: 1;
+
+    transition: opacity $animation-out-timing-function $animation-out-duration;
+
+    &.animation-out--active {
+      opacity: 0;
+
+      .modal__box {
+        transform: translate(-50%, -50%) scale(0.95);
+      }
+    }
+
+    .modal__box {
+      transform: translate(-50%, -50%) scale(1);
+      transition: transform $animation-out-timing-function $animation-out-duration;
     }
   }
 }

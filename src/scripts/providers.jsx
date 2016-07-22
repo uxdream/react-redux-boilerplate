@@ -33,19 +33,19 @@ store.dispatch(changeLanguageRequest(localStorage.getItem('language') || 'en'));
 
 export default (
   <Store store={ store }>
-    <ReactIntl>
-      <Intl>
-        <Auth>
-          <Modal>
-            <Notifications>
+    <Auth>
+      <Modal>
+        <Notifications>
+          <ReactIntl>
+            <Intl>
               <Router
                 history={ history }
                 routes={ routes }
               />
-            </Notifications>
-          </Modal>
-        </Auth>
-      </Intl>
-    </ReactIntl>
+            </Intl>
+          </ReactIntl>
+        </Notifications>
+      </Modal>
+    </Auth>
   </Store>
 );

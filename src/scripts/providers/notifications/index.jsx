@@ -125,7 +125,7 @@ export default class NotificationProvider extends Component {
           className="notification__group"
           component="div"
           transitionEnterTimeout={ 600 }
-          transitionLeaveTimeout={ 600 }
+          transitionLeaveTimeout={ 400 }
           transitionName={ {
             enter:       'animation-in',
             enterActive: 'animation-in--active',

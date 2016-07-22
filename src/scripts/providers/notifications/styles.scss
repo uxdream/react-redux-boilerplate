@@ -1,3 +1,11 @@
+.notification__group {
+  position: fixed;
+  top: 0;
+  right: 0;
+}
+
+
+
 .notification {
   $padding: 20px;
   $space: $padding / 2;
@@ -6,77 +14,17 @@
   $background-color: #fff;
   $font-color: #222;
 
-
-
-  @keyframes notification-slide-in {
-    90% {
-      transform: translate3d(-1%, 0, 0);
-    }
-
-    100% {
-      opacity: 1;
-
-      transform: translate3d(0, 0, 0);
-    }
-  }
-
-  @keyframes notification-slide-out {
-    50% {
-      margin-top: $space;
-      max-height: calc(#{ $padding } * 2 + 2em);
-      opacity: 0.5;
-
-      transform: translate3d(150%, 0, 0);
-    }
-
-    100% {
-      margin-top: 0;
-      max-height: 0;
-      opacity: 0.5;
-
-      transform: translate3d(150%, 0, 0);
-    }
-  }
-
-
-
   margin: $space $space 0 0;
+  padding: $padding;
   width: $width;
-  max-height: calc(#{ $padding } 2 + 2em);
+  background: $background-color;
+  border-radius: 3px;
+  position: relative;
 
-  &.animation-in {
-    opacity: 0.5;
+  color: $font-color;
+  font-size: 0.8rem;
 
-    transform: translate3d(150%, 0, 0);
-
-    &--active {
-      animation: notification-slide-in ease-out 0.6s;
-    }
-  }
-
-  &.animation-out {
-    &--active {
-      animation: notification-slide-out ease-in-out 0.6s;
-    }
-  }
-
-  &__group {
-    position: fixed;
-    top: 0;
-    right: 0;
-  }
-
-  &__box {
-    padding: $padding;
-    background: $background-color;
-    border-radius: 3px;
-    position: relative;
-
-    color: $font-color;
-    font-size: 0.8rem;
-  }
-
-  &__close {
+  .notification__close {
     $size: $padding * 0.75;
 
     position: absolute;
@@ -88,6 +36,43 @@
       height: $size;
       fill: $font-color;
       display: block;
+    }
+  }
+}
+
+
+
+.notification {
+  $animation-in-timing-function: ease-out;
+  $animation-out-timing-function: ease-in;
+  $animation-in-duration: 0.6s;
+  $animation-out-duration: 0.3s;
+
+  &.animation-in {
+    opacity: 0.5;
+
+    transform: translatex(150%);
+    transition: $animation-in-timing-function $animation-in-duration;
+    transition-property: opacity transform;
+
+    &.animation-in--active {
+      opacity: 1;
+
+      transform: translatex(0);
+    }
+  }
+
+  &.animation-out {
+    opacity: 1;
+
+    transform: translatex(0);
+    transition: $animation-out-timing-function $animation-out-duration;
+    transition-property: opacity transform;
+
+    &.animation-out--active {
+      opacity: 0.5;
+
+      transform: translatex(150%);
     }
   }
 }

@@ -3,6 +3,7 @@ import './styles.scss';
 
 
 import React, { Component, PropTypes, } from 'react';
+import Animation from 'react-addons-css-transition-group';
 
 import Modal from './components/modal';
 
@@ -83,7 +84,17 @@ export default class ModalProvider extends Component {
     return (
       <div { ...props }>
         { children }
-        { this.renderModal() }
+        <Animation
+          component="div"
+          transitionEnterTimeout={ 400 }
+          transitionLeaveTimeout={ 200 }
+          transitionName={ {
+            enter:       'animation-in',
+            enterActive: 'animation-in--active',
+            leave:       'animation-out',
+            leaveActive: 'animation-out--active',
+          } }
+        >{ this.renderModal() }</Animation>
       </div>
     );
   }
