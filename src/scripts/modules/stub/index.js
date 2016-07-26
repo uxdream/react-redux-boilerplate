@@ -1,9 +1,3 @@
-import React, { Component, } from 'react';
+import stub from './stub';
 
-export default class Stub extends Component {
-  render() {
-    return (
-      <div />
-    );
-  }
-}
+export default stub;

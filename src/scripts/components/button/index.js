@@ -1,18 +1,3 @@
-import React, { Component, PropTypes, } from 'react';
+import button from './button';
 
-export default class Button extends Component {
-  static propTypes = {
-    children: PropTypes.node,
-  }
-
-  render() {
-    const {
-      children,
-      ...props,
-    } = this.props;
-
-    return (
-      <button { ...props }>{ children }</button>
-    );
-  }
-}
+export default button;
