@@ -51,10 +51,5 @@ module.exports = {
       providers:  path.resolve('./src/scripts/providers'),
       utils:      path.resolve('./src/scripts/utils'),
     },
-    extensions: [
-      '',
-      '.js',
-      '.jsx',
-    ],
   },
 };
