@@ -1,6 +1,6 @@
-import { assign, } from 'lodash/fp';
+import { assign } from 'lodash/fp';
 
-import { consts, } from './actions';
+import { consts } from './actions';
 
 export default function intlReducer(state = {
   locales: {},

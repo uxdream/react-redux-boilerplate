@@ -1,8 +1,8 @@
-import React, { Component, PropTypes, } from 'react';
-import { connect, } from 'react-redux';
+import React, { Component, PropTypes } from 'react';
+import { connect } from 'react-redux';
 
-import { signOutRequest, }        from 'modules/auth/actions';
-import { changeLanguageRequest, } from 'modules/intl/actions';
+import { signOutRequest }        from 'modules/auth/actions';
+import { changeLanguageRequest } from 'modules/intl/actions';
 
 class Dashboard extends Component {
   static contextTypes = {

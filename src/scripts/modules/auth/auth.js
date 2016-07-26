@@ -1,10 +1,10 @@
-import React, { Component, PropTypes, } from 'react';
-import { connect, } from 'react-redux';
+import React, { Component, PropTypes } from 'react';
+import { connect } from 'react-redux';
 
 import Button from 'components/button';
 import Input  from 'components/input';
 
-import { signInRequest, } from './actions';
+import { signInRequest } from './actions';
 
 class SignIn extends Component {
   static contextTypes = {

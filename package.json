@@ -13,7 +13,7 @@
     "clean": "rimraf build/ *.log",
     "build": "npm run clean && webpack --config webpack/config.build.js",
     "dev": "npm run clean && webpack-dev-server --config webpack/config.dev.js",
-    "lint": "eslint **/*.js **/*.jsx"
+    "lint": "eslint **/*.js"
   },
   "devDependencies": {
     "autoprefixer": "6.3.7",

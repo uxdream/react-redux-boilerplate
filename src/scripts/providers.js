@@ -1,9 +1,9 @@
 import React from 'react';
-import { IntlProvider, } from 'react-intl';
-import { connect, Provider as Store, } from 'react-redux';
-import { Router, } from 'react-router';
+import { IntlProvider } from 'react-intl';
+import { connect, Provider as Store } from 'react-redux';
+import { Router } from 'react-router';
 
-import { changeLanguageRequest, } from 'modules/intl/actions';
+import { changeLanguageRequest } from 'modules/intl/actions';
 
 import Auth          from 'providers/auth';
 import Intl          from 'providers/intl';

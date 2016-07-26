@@ -1,7 +1,7 @@
-import { takeLatest, } from 'redux-saga';
-import { put, } from 'redux-saga/effects';
+import { takeLatest } from 'redux-saga';
+import { put } from 'redux-saga/effects';
 
-import { consts, } from './actions';
+import { consts } from './actions';
 
 function* signIn() {
   try {

@@ -1,5 +1,5 @@
 import React from 'react';
-import { IndexRedirect, Route, } from 'react-router';
+import { IndexRedirect, Route } from 'react-router';
 
 import Dashboard from 'modules/dashboard';
 import SignIn    from 'modules/auth';

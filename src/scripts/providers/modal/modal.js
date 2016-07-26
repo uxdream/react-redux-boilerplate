@@ -1,6 +1,6 @@
 import './styles.scss';
 
-import React, { Component, PropTypes, } from 'react';
+import React, { Component, PropTypes } from 'react';
 import Animation from 'react-addons-css-transition-group';
 
 import Modal from './components/modal';

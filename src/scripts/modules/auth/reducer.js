@@ -1,7 +1,7 @@
 import mergeable from 'redux-merge-reducers';
-import { assign, } from 'lodash/fp';
+import { assign } from 'lodash/fp';
 
-import { consts, } from './actions';
+import { consts } from './actions';
 
 function signInReducer(state = {
   token: localStorage.getItem('token'),

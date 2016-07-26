@@ -1,4 +1,4 @@
-import { Component, PropTypes, } from 'react';
+import { Component, PropTypes } from 'react';
 
 export default class IntlProvider extends Component {
   static childContextTypes = {

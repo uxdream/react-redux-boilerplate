@@ -1,7 +1,7 @@
-import { find, } from 'lodash/fp';
-import { takeLatest, } from 'redux-saga';
-import { put, } from 'redux-saga/effects';
-import { addLocaleData, } from 'react-intl';
+import { find } from 'lodash/fp';
+import { takeLatest } from 'redux-saga';
+import { put } from 'redux-saga/effects';
+import { addLocaleData } from 'react-intl';
 
 import de from 'react-intl/locale-data/de';
 import en from 'react-intl/locale-data/en';
@@ -9,7 +9,7 @@ import pl from 'react-intl/locale-data/pl';
 
 import store from '../../store';
 
-import { consts, } from './actions';
+import { consts } from './actions';
 
 const localesData = {
   de,
