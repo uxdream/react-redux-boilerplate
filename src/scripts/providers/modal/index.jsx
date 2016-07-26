@@ -1,13 +1,9 @@
 import './styles.scss';
 
-
-
 import React, { Component, PropTypes, } from 'react';
 import Animation from 'react-addons-css-transition-group';
 
 import Modal from './components/modal';
-
-
 
 export default class ModalProvider extends Component {
   static childContextTypes = {
@@ -17,8 +13,6 @@ export default class ModalProvider extends Component {
   static propTypes = {
     children: PropTypes.node,
   }
-
-
 
   constructor(props) {
     super(props);
@@ -40,8 +34,6 @@ export default class ModalProvider extends Component {
     };
   }
 
-
-
   _close() {
     this.setState({
       modal: null,
@@ -53,8 +45,6 @@ export default class ModalProvider extends Component {
       modal,
     });
   }
-
-
 
   renderModal() {
     const {

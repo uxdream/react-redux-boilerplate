@@ -1,10 +1,8 @@
 import React, { Component, PropTypes, } from 'react';
 import { connect, } from 'react-redux';
-import { Link, } from 'react-router';
 
+import { signOutRequest, }        from 'modules/auth/actions';
 import { changeLanguageRequest, } from 'modules/intl/actions';
-
-import paths from 'consts/paths';
 
 class Dashboard extends Component {
   static contextTypes = {
@@ -15,6 +13,7 @@ class Dashboard extends Component {
 
   static propTypes = {
     changeLanguage: PropTypes.func.isRequired,
+    signOut: PropTypes.func.isRequired,
   }
 
   render() {
@@ -26,11 +25,12 @@ class Dashboard extends Component {
 
     const {
       changeLanguage,
+      signOut,
     } = this.props;
 
     return (
       <section>
-        <Link to={ paths.signOut }>{ intl.message('SIGN_OUT') }</Link>
+        <span onClick={ signOut }>{ intl.message('SIGN_OUT') }</span>
         <ul>
           <li onClick={ changeLanguage.bind(null, 'de') }>DE</li>
           <li onClick={ changeLanguage.bind(null, 'en') }>EN</li>
@@ -56,6 +56,7 @@ function mapStateToProps() {
 
 const mapDispatchToProps = {
   changeLanguage: changeLanguageRequest,
+  signOut: signOutRequest,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Dashboard);

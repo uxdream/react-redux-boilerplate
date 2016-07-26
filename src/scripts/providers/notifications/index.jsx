@@ -1,7 +1,5 @@
 import './styles.scss';
 
-
-
 import React, { Component, PropTypes, } from 'react';
 import Animation from 'react-addons-css-transition-group';
 import { remove, } from 'lodash/fp';
@@ -9,8 +7,6 @@ import { remove, } from 'lodash/fp';
 import randomId from 'utils/randomId';
 
 import Notification from './components/notification';
-
-
 
 export default class NotificationProvider extends Component {
   static childContextTypes = {
@@ -20,8 +16,6 @@ export default class NotificationProvider extends Component {
   static propTypes = {
     children: PropTypes.node,
   }
-
-
 
   constructor(props) {
     super(props);
@@ -43,8 +37,6 @@ export default class NotificationProvider extends Component {
       },
     };
   }
-
-
 
   _close(id) {
     const {
@@ -104,8 +96,6 @@ export default class NotificationProvider extends Component {
       );
     }
   }
-
-
 
   renderNotification() {
     const {

@@ -18,6 +18,17 @@ function signInReducer(state = {
     case consts.signInFailed:
       return state;
 
+    case consts.signOutSuccess:
+      return assign(
+        state,
+        {
+          token: undefined,
+        }
+      );
+
+    case consts.signOutFailed:
+      return state;
+
     default:
       return state;
   }

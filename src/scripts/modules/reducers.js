@@ -1,10 +1,9 @@
 import { combineReducers, } from 'redux';
 
-import intl    from './intl/reducer';
-import signIn  from './signIn/reducer';
-import signOut from './signOut/reducer';
+import auth from './auth/reducer';
+import intl from './intl/reducer';
 
 export default combineReducers({
+  auth,
   intl,
-  auth: signIn.merge(signOut),
 });

@@ -1,14 +1,10 @@
 import React, { Component, PropTypes, } from 'react';
 
-
-
 export default class Notification extends Component {
   static propTypes = {
     children: PropTypes.node,
     close: PropTypes.func,
   }
-
-
 
   renderClose(callback) {
     if(!callback) {
